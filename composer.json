@@ -62,6 +62,37 @@
         },
         "sort-packages": true
     },
+    "scripts": {
+        "test_setup": [
+            "mkdir -p /tmp/b2b",
+            "rm -rf sites/simpletest/browser_output/* || true",
+            "drush upwd admin password"
+        ],
+        "test": [
+            "@test_setup",
+            "Composer\\Config::disableProcessTimeout",
+            "phpunit -c /var/www/html/phpunit.xml"
+        ],
+        "test_single": [
+            "@test_setup",
+            "phpunit -c /var/www/html/drupal/phpunit.xml modules/custom/awpid_core/tests/src/Functional/PendingActionsTest.php"
+        ],
+        "php_compatibility": [
+            "phpcs -p --standard=PHPCompatibility --extensions=php,inc,module,install --runtime-set testVersion 8.3 modules/custom",
+            "phpcs -p --standard=PHPCompatibility --extensions=php,inc,theme,install --runtime-set testVersion 8.3 themes/custom"
+        ],
+        "coding_standards": [
+            "phpcs --standard=Drupal --extensions=php,module,inc,install modules/custom",
+            "phpcs --standard=Drupal themes/custom --ignore=*/node_modules/*,*.css,*.js,includes/*"
+        ],
+        "coding_standards_fix": [
+            "phpcbf --report=diff --extensions=php,module,inc,install --standard=Drupal modules/custom",
+            "phpcbf --report=diff --standard=Drupal themes/custom --ignore=*/node_modules/*,*.css,*.js,includes/*"
+        ],
+        "drupal_check": [
+            "drupal-check */custom"
+        ]
+    },
     "extra": {
         "drupal-scaffold": {
             "locations": {
@@ -118,6 +149,10 @@
                 "      composer remove drupal/core-project-message"
             ]
         },
+        "composer-exit-on-patch-failure": true,
+        "patchLevel": {
+            "drupal/core": "-p2"
+        },
         "patches": {
             "drupal/remote_image": {
                 "3439031 - Update core_version_requirement to enable installation by composer": "https://www.drupal.org/files/issues/2024-04-15/drupal10-3439031-7.patch"
@@ -130,7 +165,11 @@
         }
     },
     "require-dev": {
+        "drupal/core-dev": "^10.0",
         "drupal/devel": "^5.1",
-        "drush/drush": "^12.1"
+        "drush/drush": "^12.1",
+        "mglaman/drupal-check": "^1.2",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "weitzman/drupal-test-traits": "^2.2"
     }
 }

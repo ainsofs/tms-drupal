@@ -268,18 +268,18 @@ services:
 #    labels:
 #    - "traefik.http.routers.${PROJECT_NAME}_xhprof.rule=Host(`xhprof.${PROJECT_BASE_URL}`)"
 
-#  chrome:
-#    image: selenium/standalone-chrome:$SELENIUM_CHROME_TAG
-#    container_name: "${PROJECT_NAME}_chrome"
-#    volumes:
-#    - /dev/shm:/dev/shm
-#    entrypoint:
-#    - chromedriver
-#    - "--no-sandbox"
-#    - "--disable-dev-shm-usage"
-#    - "--log-path=/tmp/chromedriver.log"
-#    - "--verbose"
-#    - "--whitelisted-ips="
+  chrome:
+    image: selenium/standalone-chrome:$SELENIUM_CHROME_TAG
+    container_name: "${PROJECT_NAME}_chrome"
+    volumes:
+    - /dev/shm:/dev/shm
+    entrypoint:
+    - chromedriver
+    - "--no-sandbox"
+    - "--disable-dev-shm-usage"
+    - "--log-path=/tmp/chromedriver.log"
+    - "--verbose"
+    - "--whitelisted-ips="
 
   traefik:
     image: traefik:v2.0
