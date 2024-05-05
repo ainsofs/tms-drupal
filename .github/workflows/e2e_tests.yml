@@ -31,8 +31,6 @@ jobs:
       with:
         php-version: '8.2'
         extensions: mbstring, xml, ctype, iconv, mysql, pdo_mysql
-        coverage: none
-        tools: apache2, drush
 
     - name: Enable PHP and Apache configuration
       run: |
@@ -53,11 +51,6 @@ jobs:
 
     - name: Install Composer dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
-
-    - name: Set up Drupal with Drush
-      run: |
-        drush si minimal --db-url=mysql://root:root@127.0.0.1/drupal --site-name="Drupal DTT" --account-pass=admin -y
-        drush cr
 
     - name: Run Drupal Test Trait tests
       run: |
