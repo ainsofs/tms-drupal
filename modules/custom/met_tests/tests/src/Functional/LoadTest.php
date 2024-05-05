@@ -8,7 +8,7 @@ use weitzman\DrupalTestTraits\ExistingSiteBase;
 /**
  *
  */
-class LoadTest extends ExistingSiteBase {
+class LoadTest extends MetTestBase {
 
   /**
    * An example test method; note that Drupal API's and Mink are available.
