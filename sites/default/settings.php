@@ -828,11 +828,10 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
  *
  * Keep this code block at the end of this file to take full effect.
  */
-
-if (file_exists($_SERVER['CONF_DIR'] . '/settings.docker.php')) {
-  include $_SERVER['CONF_DIR'] . '/settings.docker.php';
-}
-
-if (file_exists('/var/www/config/settings.docker.php')) {
-  include '/var/www/config/settings.docker.php';
+#
+# if (file_exists($app_root . '/' . $site_path . '/settings.local.php')) {
+#   include $app_root . '/' . $site_path . '/settings.local.php';
+# }
+if (file_exists('/var/www/conf/settings.docker.php')) {
+  include '/var/www/conf/settings.docker.php';
 }

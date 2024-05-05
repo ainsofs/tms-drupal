@@ -44,6 +44,14 @@
         "paragi/php-websocket-client": "^1.0",
         "textalk/websocket": "1.0.*"
     },
+    "require-dev": {
+        "drupal/core-dev": "^10.0",
+        "drupal/devel": "^5.1",
+        "drush/drush": "^12.1",
+        "mglaman/drupal-check": "^1.2",
+        "phpcompatibility/php-compatibility": "^9.3",
+        "weitzman/drupal-test-traits": "^2.2"
+    },
     "conflict": {
         "drupal/drupal": "*"
     },
@@ -163,13 +171,5 @@
                 "drupal/remote_image"
             ]
         }
-    },
-    "require-dev": {
-        "drupal/core-dev": "^10.0",
-        "drupal/devel": "^5.1",
-        "drush/drush": "^12.1",
-        "mglaman/drupal-check": "^1.2",
-        "phpcompatibility/php-compatibility": "^9.3",
-        "weitzman/drupal-test-traits": "^2.2"
     }
 }

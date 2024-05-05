@@ -7,7 +7,8 @@
 <php>
   <env name="DTT_BASE_URL" value="http://apache"/>
   <env name="DTT_API_URL" value="http://chrome:9222"/>
-  <env name="DTT_MINK_DRIVER_ARGS" value='["chrome", null, "http://selenium:4444/wd/hub"]'/>
+  <!-- <env name="DTT_MINK_DRIVER_ARGS" value='["chrome", null, "http://selenium:4444/wd/hub"]'/> -->
+  <env name="DTT_MINK_DRIVER_ARGS" value='["chrome", {"browserName":"chrome","goog:chromeOptions":{"w3c":false,"args":["--disable-gpu","--headless", "--no-sandbox", "--disable-dev-shm-usage"]}}, "http://selenium-chrome:4444/wd/hub"]'/>
   <!-- Example BROWSERTEST_OUTPUT_DIRECTORY value: /tmp/b2b
        Specify a temporary directory for storing debug images and html documents.
        These artifacts get copied to /sites/simpletest/browser_output by BrowserTestBase -->
