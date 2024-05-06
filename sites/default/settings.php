@@ -815,6 +815,10 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 # $settings['migrate_file_public_path'] = '';
 # $settings['migrate_file_private_path'] = '';
 
+// API Keys.
+$config['firebase.settings']['server_key'] = isset($_SERVER['FB_SERVER_KEY']) ? $_SERVER['FB_SERVER_KEY'] : '';
+$config['firebase.settings']['sender_id'] = isset($_SERVER['FB_SENDER_ID']) ? $_SERVER['FB_SENDER_ID'] : '';
+
 /**
  * Load local development override configuration, if available.
  *

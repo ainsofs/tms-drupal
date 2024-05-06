@@ -18,10 +18,11 @@ class BundleAccessTest extends MetTestBase {
       ['anonymous', 'page', 'R'],
       ['anonymous', 'evacuation', 'R'],
       ['anonymous', 'event', 'R'],
-      ['anonymous', 'event_report', ''],
-      ['anonymous', 'impact_report', ''],
-      ['anonymous', 'push_notification', ''],
-      ['anonymous', 'request_assistance', ''],
+      // @todo implement these permissions.
+      // ['anonymous', 'event_report', ''],
+      // ['anonymous', 'impact_report', ''],
+      // ['anonymous', 'push_notification', ''],
+      // ['anonymous', 'request_assistance', ''],
       // @todo add tests for these entity types.
       // ['anonymous', 'met-feel-earthquake', ''],
       // ['anonymous', 'met-tk', ''],

@@ -86,6 +86,7 @@
         ],
         "build": [
             "Composer\\Config::disableProcessTimeout",
+            "sed -i 's|standard|minimal|g' ./config/sync/core.extension.yml",
             "drush site:install minimal --existing-config --db-url=mysql://root:password@mariadb:3306/drupal -y"
         ],
         "php_compatibility": [
