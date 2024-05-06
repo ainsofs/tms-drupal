@@ -22,17 +22,24 @@ class BundleAccessTest extends MetTestBase {
       ['anonymous', 'impact_report', ''],
       ['anonymous', 'push_notification', ''],
       ['anonymous', 'request_assistance', ''],
-      ['anonymous', 'met-feel-earthquake', ''],
-      ['anonymous', 'met-tk', ''],
-      ['anonymous', 'met-warning', ''],
+      // @todo add tests for these entity types.
+      // ['anonymous', 'met-feel-earthquake', ''],
+      // ['anonymous', 'met-tk', ''],
+      // ['anonymous', 'met-warning', ''],
+      // Authenticated users
       // ['authenticated', 'article', 'C'],
       // ['authenticated', 'article', 'CR'],
       // ['authenticated', 'article', 'CRU'],
-      // ['administrator', 'article', 'CRUD'],
-      // ['administrator', 'page', 'C'],
-      // ['administrator', 'page', 'CR'],
-      // ['administrator', 'page', 'CRU'],
-      // ['administrator', 'page', 'CRUD'],
+      // @todo add roles for tms, ndrmo, geology.
+      // Admin user
+      ['administrator', 'article', 'CRUD'],
+      ['administrator', 'page', 'CRUD'],
+      ['administrator', 'evacuation', 'CRUD'],
+      ['administrator', 'event', 'CRUD'],
+      ['administrator', 'event_report', 'CRUD'],
+      ['administrator', 'impact_report', 'CRUD'],
+      ['administrator', 'push_notification', 'CRUD'],
+      ['administrator', 'request_assistance', 'CRUD'],
     ];
   }
 
@@ -64,20 +71,16 @@ class BundleAccessTest extends MetTestBase {
       'type' => $bundle,
       'status' => NodeInterface::PUBLISHED,
       'title' => 'Test ' . $bundle,
-      // 'body' => 'Test body',
     ];
+
     $node = $this->createNode($edit);
     $this->drupalGet($node->toUrl());
 
     $expected_status = (strpos($permissions, 'R') !== FALSE) ? 200 : 403;
     $this->assertSession()->statusCodeEquals($expected_status);
     if (strpos($permissions, 'U') !== FALSE) {
-      $edit_button = $this->getSession()->getPage()->findButton('Edit');
-      if ($edit_button) {
-        // Button exists, click it.
-        $edit_button->press();
-        $this->assertSession()->statusCodeEquals($expected_status);
-      }
+      $this->clickLink('Edit');
+      $this->assertSession()->statusCodeEquals(200);
     }
     $this->drupalGet('node/' . $node->id() . '/delete');
     $expected_status = (strpos($permissions, 'D') !== FALSE) ? 200 : 403;
