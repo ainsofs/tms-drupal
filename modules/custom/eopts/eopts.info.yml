@@ -3,3 +3,5 @@ type: module
 description: 'eopts general module, included by default from template'
 core_version_requirement: ^9.5 || ^10
 package: 'Custom'
+dependencies:
+  - options
