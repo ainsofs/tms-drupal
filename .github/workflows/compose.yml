@@ -30,18 +30,22 @@ jobs:
 
         # Create performance testing results directory.
         sudo mkdir -p vendor
+        sudo mkdir -p core
+        sudo mkdir -p modules/contrib
         sudo chmod 777 vendor
+        sudo chmod 777 core
+        sudo chmod 777 modules/contrib
 
     - name: 📦 Setup
       run: |
         docker compose down -v --remove-orphans
         docker compose up -d --wait
-        docker compose exec -T --user www-data php /bin/sh -c "cd /var/www/html/ && composer install --prefer-dist --no-progress"
+        docker compose exec -T --user wodby php /bin/sh -c "cd /var/www/html/ && composer install --prefer-dist --no-progress"
 
     - name: Execute tests
       run: |
-        docker compose exec -T --user www-data php /bin/sh -c "cd /var/www/html/ && drush si -y"
-        docker compose exec -T --user www-data php /bin/sh -c "cd /var/www/html/ && composer test"
+        docker compose exec -T --user wodby php /bin/sh -c "cd /var/www/html/ && drush si -y"
+        docker compose exec -T --user wodby php /bin/sh -c "cd /var/www/html/ && composer test"
 
     - name: Cleanup
       run: |
