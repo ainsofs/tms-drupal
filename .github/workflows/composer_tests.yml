@@ -13,7 +13,7 @@ jobs:
     runs-on: ubuntu-latest
     outputs:
       cache-key: ${{ steps.cache-keys.outputs.key }}
-    
+
     steps:
       - uses: actions/checkout@v2
 
@@ -36,9 +36,9 @@ jobs:
     continue-on-error: true
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress
 
       - name: Coding Standards Check
         run: composer coding_standards
@@ -49,9 +49,9 @@ jobs:
     continue-on-error: true
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress
 
       - name: PHP Compatibility Check
         run: composer php_compatibility
@@ -62,9 +62,9 @@ jobs:
     continue-on-error: true
     steps:
       - uses: actions/checkout@v2
-      
+
       - name: Install Composer dependencies
-        run: composer install --prefer-dist --no-progress --no-suggest
+        run: composer install --prefer-dist --no-progress
 
       - name: Drupal Check
         run: composer drupal_check
