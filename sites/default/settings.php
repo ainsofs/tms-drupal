@@ -819,6 +819,14 @@ $settings['migrate_node_migrate_type_classic'] = FALSE;
 $config['firebase.settings']['server_key'] = isset($_SERVER['FB_SERVER_KEY']) ? $_SERVER['FB_SERVER_KEY'] : '';
 $config['firebase.settings']['sender_id'] = isset($_SERVER['FB_SENDER_ID']) ? $_SERVER['FB_SENDER_ID'] : '';
 
+// NIWA
+$config['met_niwa.settings']['url'] = isset($_SERVER['NIWA_URL']) ? $_SERVER['NIWA_URL'] : '';
+$config['met_niwa.settings']['endpoint'] = isset($_SERVER['NIWA_ENDPOINT']) ? $_SERVER['NIWA_ENDPOINT'] : '';
+
+// SPC
+$config['met_spc.settings']['url'] = isset($_SERVER['OCEAN_URL']) ? $_SERVER['OCEAN_URL'] : '';
+$config['met_spc.settings']['token'] = isset($_SERVER['OCEAN_TOKEN']) ? $_SERVER['OCEAN_TOKEN'] : '';
+
 /**
  * Load local development override configuration, if available.
  *
