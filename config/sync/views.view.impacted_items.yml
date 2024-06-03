@@ -357,7 +357,6 @@ display:
                   enabled: true
                   color: '#f07c33'
                   weight: 2
-              color_changer: 0
             display:
               title: ''
               title_position: out
@@ -383,6 +382,7 @@ display:
                 yellow_to: '85'
                 red_from: '0'
                 red_to: '50'
+              color_changer: false
             xaxis:
               title: ''
               labels_rotation: '0'
@@ -454,7 +454,6 @@ display:
                   weight: 2
               entity_grouping:
                 color_selection_method: by_entities_on_entity_reference
-              color_changer: 0
             display:
               title: ''
               title_position: out
@@ -480,6 +479,7 @@ display:
                 yellow_to: '85'
                 red_from: '0'
                 red_to: '50'
+              color_changer: false
             xaxis:
               title: ''
               labels_rotation: '0'

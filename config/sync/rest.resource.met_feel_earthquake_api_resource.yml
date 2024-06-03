@@ -13,7 +13,6 @@ plugin_id: met_feel_earthquake_api_resource
 granularity: resource
 configuration:
   methods:
-    - GET
     - POST
   formats:
     - hal_json

@@ -4,6 +4,7 @@ module:
   admin_toolbar: 0
   admin_toolbar_tools: 0
   automated_cron: 0
+  backup_migrate: 0
   basic_auth: 0
   big_pipe: 0
   block: 0
@@ -19,9 +20,9 @@ module:
   contextual: 0
   datetime: 0
   dblog: 0
-  devel: 0
   dynamic_page_cache: 0
   editor: 0
+  encrypt: 0
   entity_reference_revisions: 0
   field: 0
   field_ui: 0
@@ -37,7 +38,9 @@ module:
   jquery_ui: 0
   jquery_ui_autocomplete: 0
   jquery_ui_menu: 0
+  key: 0
   link: 0
+  mailsystem: 0
   menu_link_content: 0
   menu_ui: 0
   met_api: 0
@@ -55,6 +58,7 @@ module:
   page_cache: 0
   path: 0
   path_alias: 0
+  phpass: 0
   remote_image: 0
   rest: 0
   restui: 0
@@ -67,6 +71,7 @@ module:
   textfield_counter: 0
   toolbar: 0
   tour: 0
+  update: 0
   upload_replace: 0
   user: 0
   views_ui: 0

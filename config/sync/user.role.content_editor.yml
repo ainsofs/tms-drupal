@@ -7,6 +7,7 @@ dependencies:
     - node.type.article
     - node.type.event
     - node.type.event_report
+    - node.type.feel_earthquake
     - node.type.impact_report
     - node.type.page
     - node.type.request_assistance
@@ -16,6 +17,7 @@ dependencies:
     - contextual
     - file
     - filter
+    - help
     - node
     - path
     - system
@@ -33,12 +35,14 @@ permissions:
   - 'access content overview'
   - 'access contextual links'
   - 'access files overview'
+  - 'access help pages'
   - 'access toolbar'
   - 'access tour'
   - 'administer url aliases'
   - 'create article content'
   - 'create event content'
   - 'create event_report content'
+  - 'create feel_earthquake content'
   - 'create impact_report content'
   - 'create page content'
   - 'create request_assistance content'
@@ -46,6 +50,7 @@ permissions:
   - 'create url aliases'
   - 'delete article revisions'
   - 'delete own article content'
+  - 'delete own files'
   - 'delete own page content'
   - 'delete page revisions'
   - 'edit own article content'

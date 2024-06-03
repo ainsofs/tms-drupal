@@ -5,6 +5,7 @@ dependencies:
   config:
     - node.type.push_notification
   module:
+    - file
     - node
 id: push_notification
 label: 'Push notification'
@@ -13,4 +14,5 @@ is_admin: null
 permissions:
   - 'create push_notification content'
   - 'delete any push_notification content'
+  - 'delete own files'
   - 'delete own push_notification content'
