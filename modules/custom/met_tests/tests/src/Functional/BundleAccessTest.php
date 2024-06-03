@@ -14,23 +14,33 @@ class BundleAccessTest extends MetTestBase {
    */
   public function crudTestProvider() {
     return [
-      ['anonymous', 'article', 'R'],
-      ['anonymous', 'page', 'R'],
-      ['anonymous', 'evacuation', 'R'],
-      ['anonymous', 'event', 'R'],
-      // @todo implement these permissions.
-      // ['anonymous', 'event_report', ''],
-      // ['anonymous', 'impact_report', ''],
-      // ['anonymous', 'push_notification', ''],
-      // ['anonymous', 'request_assistance', ''],
-      // @todo add tests for these entity types.
+      // @todo Add tests for these entity types.
       // ['anonymous', 'met-feel-earthquake', ''],
       // ['anonymous', 'met-tk', ''],
       // ['anonymous', 'met-warning', ''],
-      // Authenticated users
-      // ['authenticated', 'article', 'C'],
-      // ['authenticated', 'article', 'CR'],
-      // ['authenticated', 'article', 'CRU'],
+
+      // Anonymous cannot access content.
+      ['anonymous', 'article', ''],
+      ['anonymous', 'page', ''],
+      ['anonymous', 'evacuation', ''],
+      ['anonymous', 'event', ''],
+      ['anonymous', 'event_report', ''],
+      ['anonymous', 'impact_report', ''],
+      ['anonymous', 'push_notification', ''],
+      ['anonymous', 'request_assistance', ''],
+
+      // Authenticated users can read.
+      ['authenticated', 'article', 'R'],
+      ['authenticated', 'page', 'R'],
+      ['authenticated', 'evacuation', 'R'],
+      ['authenticated', 'event', 'R'],
+      ['authenticated', 'push_notification', 'R'],
+
+      // Authenticated users can create and read.
+      ['authenticated', 'event_report', 'CR'],
+      ['authenticated', 'impact_report', 'CR'],
+      ['authenticated', 'request_assistance', 'CR'],
+
       // @todo add roles for tms, ndrmo, geology.
       // Admin user
       ['administrator', 'article', 'CRUD'],
